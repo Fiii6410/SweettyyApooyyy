@@ -1,0 +1,226 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    color: #74445c;
+    background: #fff4f8;
+    overflow-x: hidden;
+}
+
+header {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 20% 20%, #ffffffaa, transparent 30%),
+        linear-gradient(135deg, #ffc4d6, #e8c9ff, #fff0f5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+header h1 {
+    font-size: clamp(40px, 8vw, 75px);
+    color: #b44e7b;
+    animation: appear 1.5s ease;
+}
+
+header p {
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+.flower {
+    font-size: 65px;
+    animation: float 3s infinite ease-in-out;
+}
+
+.button, button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 40px;
+    background: #df78a0;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 5px 15px #d77da466;
+    transition: .3s;
+}
+
+.button:hover, button:hover {
+    background: #b94d7d;
+    transform: scale(1.08);
+}
+
+.scroll {
+    position: absolute;
+    bottom: 25px;
+    animation: float 2s infinite;
+}
+
+section {
+    padding: 90px 20px;
+    text-align: center;
+}
+
+section h2 {
+    color: #c45e8c;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.description {
+    max-width: 650px;
+    margin: auto;
+    line-height: 2;
+    font-size: 17px;
+}
+
+.gallery {
+    background: linear-gradient(#fff4f8, #fce1ed);
+}
+
+.photo-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.photo {
+    width: 260px;
+    padding: 12px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px #b96b8b33;
+    transition: .4s;
+}
+
+.photo:hover {
+    transform: translateY(-12px) rotate(2deg);
+}
+
+.photo img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.photo p {
+    padding: 15px 0 5px;
+    color: #c45e8c;
+}
+
+.reason-container {
+    max-width: 650px;
+    margin: 30px auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.reason {
+    padding: 25px 12px;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 5px 15px #d77da422;
+    transition: .3s;
+}
+
+.reason:hover {
+    transform: scale(1.05);
+    background: #ffe2ed;
+}
+
+.letter {
+    background: linear-gradient(135deg, #f8d8e9, #e8d9ff);
+}
+
+.envelope {
+    font-size: 65px;
+    animation: float 2s infinite;
+}
+
+#letterText {
+    max-width: 550px;
+    margin: 25px auto;
+    line-height: 2;
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px #ad6d9933;
+}
+
+.ending {
+    background: linear-gradient(135deg, #f6b9d0, #d9b7ef);
+    color: #8d4568;
+}
+
+.ending h1 {
+    font-size: clamp(30px, 6vw, 50px);
+}
+
+.big-heart {
+    font-size: 100px;
+    color: #df578c;
+    animation: heartbeat 1.2s infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Dekorasi hati dan bunga */
+.decor {
+    position: fixed;
+    bottom: -50px;
+    z-index: 10;
+    pointer-events: none;
+    animation: rise linear forwards;
+}
+
+@keyframes rise {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@media(max-width: 600px) {
+    .reason-container {
+        grid-template-columns: 1fr;
+    }
+
+    .photo {
+        width: 85%;
+    }
+
+    section {
+        padding: 65px 18px;
+    }
+}
